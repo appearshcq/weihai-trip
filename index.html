@@ -97,6 +97,17 @@
   .day-head .t span{font-size:12px;color:var(--ink-soft)}
   .day-weather{font-size:12px;color:var(--sea);background:#E3F5FF;border-radius:999px;padding:4px 12px;flex:none}
 
+  /* ---------- 折叠日程（D1-D3 点开收起） ---------- */
+  .day-head.day-bar{cursor:pointer;-webkit-user-select:none;user-select:none;margin-bottom:0}
+  .day-head.day-bar:active{opacity:.8}
+  .day-chev{margin-left:8px;flex:none;width:24px;height:24px;border-radius:50%;
+    background:#E3F5FF;color:var(--sea);display:flex;align-items:center;justify-content:center;
+    font-size:16px;line-height:1;font-weight:700;padding-bottom:3px;
+    box-shadow:0 2px 6px rgba(2,136,209,.12);transition:transform .35s ease,background .35s ease,color .35s ease}
+  .day-card.open .day-chev{transform:rotate(180deg);background:#FFF3CD;color:#B26A00}
+  .day-fold{overflow:hidden;max-height:0;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+  .day-card.open{box-shadow:0 10px 30px rgba(2,136,209,.14)}
+
   /* 时间轴 */
   .tl{margin-top:12px;position:relative;padding-left:20px}
   .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:14px;width:2px;
@@ -236,12 +247,14 @@
       <div class="ico" style="background:#D6EFFF">⛵</div>
       <div><h3>D1 · 登岛看海</h3><small>9月27日 · 刘公岛历史之旅</small></div>
     </div>
-    <div class="card">
-      <div class="day-head">
+    <div class="card day-card">
+      <div class="day-head day-bar" role="button" tabindex="0" aria-expanded="false">
         <div class="day-badge badge-sea"><small>SEP</small><b>27</b></div>
         <div class="t"><b>刘公岛 · 历史与海风</b><span>中午抵达 → 傍晚凯旋 → 晚宴开场 🎉</span></div>
         <div class="day-weather">🌤️ 宜登岛</div>
+        <span class="day-chev">⌄</span>
       </div>
+      <div class="day-fold">
       <div class="tl">
         <div class="stop">
           <div class="time">12:00 — 13:00</div>
@@ -276,6 +289,7 @@
           <span class="pill pill-yellow">团队晚宴</span>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
@@ -285,12 +299,14 @@
       <div class="ico" style="background:#FFF3CD">🏖️</div>
       <div><h3>D2 · 阳光海岸线</h3><small>9月28日 · 全天包车：海滨公园＋那香海＋布鲁威斯号</small></div>
     </div>
-    <div class="card">
-      <div class="day-head">
+    <div class="card day-card">
+      <div class="day-head day-bar" role="button" tabindex="0" aria-expanded="false">
         <div class="day-badge badge-sun"><small>SEP</small><b>28</b></div>
         <div class="t"><b>一路向北 · 追着海风跑</b><span>全天包车，随停随拍，松弛感拉满</span></div>
         <div class="day-weather">☀️ 好心情</div>
+        <span class="day-chev">⌄</span>
       </div>
+      <div class="day-fold">
       <div class="tl">
         <div class="stop">
           <div class="time">08:30</div>
@@ -342,6 +358,7 @@
           <span class="pill pill-yellow">海鲜/鲁菜</span>
         </div>
       </div>
+      </div>
     </div>
   </div>
 
@@ -351,12 +368,14 @@
       <div class="ico" style="background:#FFE4D6">✈️</div>
       <div><h3>D3 · 慢时光返程</h3><small>9月29日 · 海源公园＋市区休闲，16:00 去机场</small></div>
     </div>
-    <div class="card">
-      <div class="day-head">
+    <div class="card day-card">
+      <div class="day-head day-bar" role="button" tabindex="0" aria-expanded="false">
         <div class="day-badge badge-coral"><small>SEP</small><b>29</b></div>
         <div class="t"><b>把威海装进行李箱</b><span>上午散步咖啡 · 下午自由活动 · 晚上飞回家</span></div>
         <div class="day-weather">🌅 慢慢来</div>
+        <span class="day-chev">⌄</span>
       </div>
+      <div class="day-fold">
       <div class="tl">
         <div class="stop">
           <div class="time">08:00 — 09:00</div>
@@ -404,6 +423,7 @@
           <div class="name">✈️ 酒店出发去威海机场</div>
           <div class="note">先按约 60—75 分钟预留，再依据航班时间校验 · 19:20 航班起飞</div>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -491,6 +511,55 @@
     var soon = document.getElementById('albumSoon');
     if(soon){ soon.textContent = '打开百度网盘即可查看 · 照片实时更新 · 提取码 0927'; }
   }
+})();
+
+/* D1-D3 折叠日程：点任一天展开，同时自动收起其他天 */
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.card.day-card'));
+  if(!cards.length) return;
+
+  function fold(el){ return el.querySelector('.day-fold'); }
+
+  function closeCard(card){
+    var f = fold(card);
+    if(!f) return;
+    card.classList.remove('open');
+    card.setAttribute('aria-expanded','false');
+    if(f.style.maxHeight === '' || f.style.maxHeight === 'none'){
+      f.style.maxHeight = f.scrollHeight + 'px';
+      void f.offsetHeight;
+    }
+    f.style.maxHeight = '0px';
+  }
+
+  function openCard(card){
+    var f = fold(card);
+    if(!f) return;
+    card.classList.add('open');
+    card.setAttribute('aria-expanded','true');
+    f.style.maxHeight = f.scrollHeight + 'px';
+    var done = function(e){
+      if(e && e.target !== f) return;
+      f.removeEventListener('transitionend', done);
+      if(card.classList.contains('open')){ f.style.maxHeight = 'none'; }
+    };
+    f.addEventListener('transitionend', done);
+  }
+
+  function toggle(card){
+    var isOpen = card.classList.contains('open');
+    cards.forEach(closeCard);
+    if(!isOpen){ openCard(card); }
+  }
+
+  cards.forEach(function(card){
+    var bar = card.querySelector('.day-bar');
+    if(!bar) return;
+    bar.addEventListener('click', function(){ toggle(card); });
+    bar.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(card); }
+    });
+  });
 })();
 </script>
 </body>
