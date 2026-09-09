@@ -126,6 +126,31 @@
   .pill-yellow{background:#FFF3CD;color:#B26A00}
   .pill-green{background:#E0F7F0;color:#00875F}
 
+  /* ---------- D1 晚宴详情 ---------- */
+  .stop .dinner-toggle{display:inline-block;margin-top:7px;cursor:pointer;background:#FFF3CD;color:#B26A00;
+    border-radius:999px;padding:7px 15px;font-size:12.5px;font-weight:700;user-select:none;
+    box-shadow:0 3px 8px rgba(255,179,0,.2);transition:background .3s ease,color .3s ease;
+    -webkit-tap-highlight-color:transparent}
+  .stop .dinner-toggle::after{content:" ▾";margin-left:2px}
+  .stop .dinner-toggle.open{background:linear-gradient(135deg,#FF8A65,#F4511E);color:#fff}
+  .stop .dinner-toggle.open::after{content:" ▴"}
+  .dinner-fold{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.4,0,.2,1)}
+  .dinner-fold.open{max-height:2400px}
+  .dinner-card{margin-top:12px;background:linear-gradient(160deg,#FFF8E7,#FFF1DC 70%,#FFE9D2);
+    border-radius:20px;padding:16px 15px;border:1px solid #F5D9A8}
+  .dinner-meta{display:grid;grid-template-columns:1fr;gap:11px}
+  .dinner-meta .row{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:#7A4A00;line-height:1.65}
+  .dinner-meta .row .ic{flex:none;font-size:17px;margin-top:1px}
+  .dinner-meta .row b{color:#8D4E00}
+  .dinner-menu-t{display:flex;align-items:center;gap:9px;margin:16px 0 11px;
+    font-size:14.5px;font-weight:800;color:#8D4E00;letter-spacing:1px}
+  .dinner-menu-t::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#EFC88F,transparent)}
+  .menu-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px}
+  .menu-grid .dish{background:#fff;border-radius:13px;padding:9px 6px;text-align:center;font-size:13px;
+    color:#5A3D14;font-weight:600;line-height:1.4;border:1px solid #F7E3C2;
+    box-shadow:0 3px 9px rgba(244,81,30,.07)}
+  .menu-grid .dish.star{background:linear-gradient(135deg,#FFE9D6,#FFD9BD);color:#B2460A;font-weight:700;border-color:#F3C795}
+
   /* ---------- 交通 & 贴士 ---------- */
   .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .info-item{background:#fff;border-radius:18px;padding:14px 12px;box-shadow:0 6px 20px rgba(2,136,209,.08);text-align:center}
@@ -287,6 +312,41 @@
           <div class="name">🥂 希尔顿酒店晚宴</div>
           <div class="note">第一天犒劳一下大家，好好吃一顿！</div>
           <span class="pill pill-yellow">团队晚宴</span>
+          <span class="dinner-toggle" role="button" tabindex="0">📋 查看晚宴详情 · 菜单</span>
+          <div class="dinner-fold">
+            <div class="dinner-card">
+              <div class="dinner-meta">
+                <div class="row"><span class="ic">🏨</span><span>威海威高希尔顿逸林酒店 <b>三楼 · 环海厅</b></span></div>
+                <div class="row"><span class="ic">🕕</span><span>用餐时间：<b>9月27日 晚上 18:00</b></span></div>
+                <div class="row"><span class="ic">📍</span><span>酒店地址：<b>环翠区新威路 17-3b 号</b></span></div>
+                <div class="row"><span class="ic">📞</span><span>酒店电话：<b>0631-5289688</b> <span style="font-size:11px;color:#B27A3A">（可拨打）</span></span></div>
+              </div>
+              <div class="dinner-menu-t">🍽️ 晚宴菜单 · 经典鲁菜 21 道</div>
+              <div class="menu-grid">
+                <div class="dish star">精美艳丽碟</div>
+                <div class="dish star">松茸海参盅<span style="display:block;font-size:11px;color:#C07A3A">（位）</span></div>
+                <div class="dish">蒜蓉粉丝蒸鲍鱼</div>
+                <div class="dish star">茶香大虾</div>
+                <div class="dish">逸林生态炒鸡</div>
+                <div class="dish">海肠扣饭</div>
+                <div class="dish">粤式黑椒牛肉</div>
+                <div class="dish">渔家两样配发糕</div>
+                <div class="dish">黑醋秘制脆爽肉</div>
+                <div class="dish star">海鲜毛血旺</div>
+                <div class="dish">冲油鲜贝丁</div>
+                <div class="dish star">葱姜焗蟹块</div>
+                <div class="dish">茄香酱头</div>
+                <div class="dish">茼蒿炒乌鱼花</div>
+                <div class="dish">酱焖海鱼</div>
+                <div class="dish">红糖酥饼</div>
+                <div class="dish">海鲜嫩豆花</div>
+                <div class="dish">清炒双脆</div>
+                <div class="dish">肉丝炒鲍芹</div>
+                <div class="dish">萝卜丝肉脂水饺</div>
+                <div class="dish star">精美水果拼</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       </div>
@@ -541,6 +601,22 @@
     bar.addEventListener('keydown', function(e){
       if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(card); }
     });
+  });
+})();
+
+/* D1 晚宴详情：点「查看详情」展开/收起菜单 */
+(function(){
+  var t = document.querySelector('.dinner-toggle');
+  if(!t) return;
+  var fold = document.querySelector('.dinner-fold');
+  function toggle(){
+    var open = fold.classList.toggle('open');
+    t.classList.toggle('open', open);
+    t.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  t.addEventListener('click', toggle);
+  t.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
   });
 })();
 </script>
