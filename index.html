@@ -98,12 +98,14 @@
   .day-weather{font-size:12px;color:var(--sea);background:#E3F5FF;border-radius:999px;padding:4px 12px;flex:none}
 
   /* ---------- 折叠日程（D1-D3 点开收起） ---------- */
-  .day-head.day-bar{cursor:pointer;-webkit-user-select:none;user-select:none;margin-bottom:0}
-  .day-head.day-bar:active{opacity:.8}
-  .day-chev{margin-left:8px;flex:none;width:24px;height:24px;border-radius:50%;
+  .day-head.day-bar{cursor:pointer;-webkit-user-select:none;user-select:none;margin-bottom:0;
+    padding:4px 2px;border-radius:16px;transition:background .25s ease}
+  .day-head.day-bar:hover{background:#F4FBFF}
+  .day-head.day-bar:active{opacity:.72;transform:scale(.99)}
+  .day-chev{margin-left:10px;flex:none;width:46px;height:46px;border-radius:50%;
     background:#E3F5FF;color:var(--sea);display:flex;align-items:center;justify-content:center;
-    font-size:16px;line-height:1;font-weight:700;padding-bottom:3px;
-    box-shadow:0 2px 6px rgba(2,136,209,.12);transition:transform .35s ease,background .35s ease,color .35s ease}
+    font-size:28px;line-height:1;font-weight:800;padding-bottom:5px;
+    box-shadow:0 3px 9px rgba(2,136,209,.14);transition:transform .35s ease,background .35s ease,color .35s ease}
   .day-card.open .day-chev{transform:rotate(180deg);background:#FFF3CD;color:#B26A00}
   .day-fold{overflow:hidden;max-height:0;transition:max-height .5s cubic-bezier(.4,0,.2,1)}
   .day-card.open{box-shadow:0 10px 30px rgba(2,136,209,.14)}
@@ -127,11 +129,13 @@
   .pill-green{background:#E0F7F0;color:#00875F}
 
   /* ---------- D1 晚宴详情 ---------- */
-  .stop .dinner-toggle{display:inline-block;margin-top:7px;cursor:pointer;background:#FFF3CD;color:#B26A00;
-    border-radius:999px;padding:7px 15px;font-size:12.5px;font-weight:700;user-select:none;
-    box-shadow:0 3px 8px rgba(255,179,0,.2);transition:background .3s ease,color .3s ease;
+  .stop .dinner-toggle{display:inline-block;margin-top:9px;cursor:pointer;background:#FFF3CD;color:#B26A00;
+    border-radius:999px;padding:11px 20px;font-size:14.5px;font-weight:800;user-select:none;
+    letter-spacing:.5px;
+    box-shadow:0 4px 12px rgba(255,179,0,.24);transition:background .3s ease,color .3s ease,transform .2s ease;
     -webkit-tap-highlight-color:transparent}
-  .stop .dinner-toggle::after{content:" ▾";margin-left:2px}
+  .stop .dinner-toggle:active{transform:scale(.97)}
+  .stop .dinner-toggle::after{content:" ▾";margin-left:4px;font-weight:700}
   .stop .dinner-toggle.open{background:linear-gradient(135deg,#FF8A65,#F4511E);color:#fff}
   .stop .dinner-toggle.open::after{content:" ▴"}
   .dinner-fold{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.4,0,.2,1)}
@@ -260,7 +264,7 @@
         <div class="item"><b>10:20</b><span class="hl">抵达</span></div>
       </div>
       <div class="flight-row" style="border-top:none;margin-top:6px;padding-top:0">
-        <div class="item" style="text-align:left"><b>出发地</b>浦东 2 号航站楼</div>
+        <div class="item" style="text-align:left"><b>出发地</b>浦东机场T2</div>
         <div class="item" style="text-align:right"><b>到达后</b>约 12:00 抵达酒店</div>
       </div>
     </div>
@@ -520,7 +524,7 @@
       <div class="flight-row">
         <div class="item"><b>09-29</b><span class="hl">19:20</span> 起飞</div>
         <div class="item"><b>航班号</b>MU8392<br><span style="font-size:11px;color:#8FA1B0">实际承运 FM9234</span></div>
-        <div class="item"><b>21:20</b><span class="hl">抵达</span></div>
+        <div class="item"><b>21:20</b><span class="hl">抵达</span><br><span style="font-size:11px;color:#8FA1B0">上海浦东机场T1</span></div>
       </div>
       <div class="flight-row" style="border-top:none;margin-top:6px;padding-top:0">
         <div class="item" style="text-align:left"><b>去机场</b>16:00 酒店出发</div>
