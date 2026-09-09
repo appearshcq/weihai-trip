@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>威海团建之旅 · 9.27-9.29 | 阳光与海</title>
+<!--
+  ══════════════════════════════════════════════
+  ★ 相册设置说明（ organizers only ）
+  拿到百度网盘链接后，把下面 BAIDU_NETDISK_URL 的
+  引号里换成你的链接即可，替换文件后刷新页面。
+  ══════════════════════════════════════════════
+-->
+<script>
+  var BAIDU_NETDISK_URL = "https://pan.baidu.com/s/1ny8h6L9a_7ABl1MHVp7xzg?pwd=0927"; // 提取码 0927
+</script>
+<style>
+  :root{
+    --sun:#FFB300; --sun-light:#FFD54F; --coral:#FF7043; --coral-light:#FF8A65;
+    --sea:#0288D1; --sea-light:#4FC3F7; --deep:#01579B;
+    --ink:#2B3A4A; --ink-soft:#5A6B7B; --card:#FFFFFF;
+    --bg:#FFF9EC; --mint:#26C6A6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,sans-serif;
+    background:linear-gradient(180deg,#BDE9FF 0%,#E3F6FF 30%,#FFF9EC 55%,#FFF6E3 100%);
+    color:var(--ink); max-width:520px; margin:0 auto; min-height:100vh;
+    overflow-x:hidden; position:relative;
+  }
+  /* ---------- 装饰：太阳 / 云 / 海浪 ---------- */
+  .sky{position:relative;height:340px;overflow:hidden}
+  .sun{
+    position:absolute;top:-46px;right:-40px;width:150px;height:150px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,#FFE082,#FFB300);
+    box-shadow:0 0 60px 24px rgba(255,179,0,.35);animation:pulse 5s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+  .cloud{position:absolute;background:#fff;border-radius:50px;opacity:.9;animation:drift 22s linear infinite}
+  .cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+  .c1{width:90px;height:26px;top:60px;left:-100px;animation-duration:26s}
+  .c1::before{width:36px;height:36px;top:-16px;left:14px}
+  .c1::after{width:26px;height:26px;top:-10px;left:46px}
+  .c2{width:64px;height:20px;top:130px;left:-80px;animation-duration:34s;animation-delay:6s;opacity:.7}
+  .c2::before{width:26px;height:26px;top:-12px;left:10px}
+  .c2::after{width:20px;height:20px;top:-8px;left:32px}
+  @keyframes drift{from{transform:translateX(0)}to{transform:translateX(700px)}}
+  .wave{position:absolute;bottom:-2px;left:0;width:100%;height:56px}
+  .bird{position:absolute;font-size:18px;animation:drift 30s linear infinite;top:90px;left:-60px;opacity:.75}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;text-align:center;padding:64px 20px 0;z-index:2}
+  .hero .tag{
+    display:inline-block;background:rgba(255,255,255,.85);border-radius:999px;
+    padding:6px 18px;font-size:13px;color:var(--coral);letter-spacing:4px;font-weight:600;
+    box-shadow:0 4px 14px rgba(2,136,209,.12);margin-bottom:16px;
+  }
+  .hero h1{font-size:44px;letter-spacing:6px;color:#fff;
+    text-shadow:0 2px 0 rgba(1,87,155,.28),0 6px 24px rgba(2,136,209,.35);font-weight:800}
+  .hero h2{font-size:17px;color:var(--deep);letter-spacing:8px;margin-top:12px;font-weight:600}
+  .hero .meta{display:flex;justify-content:center;gap:10px;margin-top:18px;flex-wrap:wrap}
+  .hero .meta span{
+    background:rgba(255,255,255,.9);border-radius:12px;padding:7px 14px;font-size:13px;
+    color:var(--ink-soft);box-shadow:0 3px 10px rgba(2,136,209,.10);font-weight:500;
+  }
+
+  /* ---------- 通用区块 ---------- */
+  .wrap{padding:6px 16px 10px}
+  .section{margin-top:26px}
+  .sec-title{display:flex;align-items:center;gap:10px;margin:0 4px 14px}
+  .sec-title .ico{
+    width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    font-size:19px;box-shadow:0 4px 12px rgba(2,136,209,.18);flex:none;
+  }
+  .sec-title h3{font-size:20px;font-weight:800;color:var(--ink);letter-spacing:2px}
+  .sec-title small{font-size:12px;color:var(--ink-soft);font-weight:500;margin-top:3px;display:block;letter-spacing:1px}
+
+  .card{background:var(--card);border-radius:22px;padding:18px 16px;margin-bottom:14px;
+    box-shadow:0 8px 28px rgba(2,136,209,.10)}
+
+  /* ---------- 日程卡片 ---------- */
+  .day-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+  .day-badge{
+    width:52px;height:52px;border-radius:16px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;color:#fff;flex:none;font-weight:800;
+    box-shadow:0 6px 16px rgba(0,0,0,.15)
+  }
+  .day-badge small{font-size:9px;letter-spacing:1px;opacity:.9;font-weight:600}
+  .day-badge b{font-size:20px;line-height:1.1}
+  .badge-sea{background:linear-gradient(135deg,#4FC3F7,#0288D1)}
+  .badge-sun{background:linear-gradient(135deg,#FFD54F,#FF9800)}
+  .badge-coral{background:linear-gradient(135deg,#FF8A65,#F4511E)}
+  .day-head .t{flex:1;min-width:0}
+  .day-head .t b{font-size:17px;display:block;letter-spacing:1px}
+  .day-head .t span{font-size:12px;color:var(--ink-soft)}
+  .day-weather{font-size:12px;color:var(--sea);background:#E3F5FF;border-radius:999px;padding:4px 12px;flex:none}
+
+  /* 时间轴 */
+  .tl{margin-top:12px;position:relative;padding-left:20px}
+  .tl::before{content:"";position:absolute;left:5px;top:8px;bottom:14px;width:2px;
+    background:linear-gradient(180deg,var(--sea-light),#FFE082)}
+  .stop{position:relative;padding:0 0 16px 8px}
+  .stop:last-child{padding-bottom:2px}
+  .stop::before{content:"";position:absolute;left:-20px;top:5px;width:12px;height:12px;border-radius:50%;
+    background:#fff;border:3px solid var(--sea-light);box-shadow:0 0 0 3px rgba(79,195,247,.18)}
+  .stop.hl::before{border-color:var(--sun);background:#FFF3CD;box-shadow:0 0 0 3px rgba(255,179,0,.22)}
+  .stop .time{font-size:12.5px;font-weight:800;color:var(--sea);letter-spacing:.5px}
+  .stop.hl .time{color:var(--coral)}
+  .stop .name{font-size:15.5px;font-weight:700;margin:3px 0 3px}
+  .stop .note{font-size:12.5px;color:var(--ink-soft);line-height:1.65}
+  .pill{display:inline-block;font-size:11px;border-radius:999px;padding:2px 10px;margin-top:5px;font-weight:600}
+  .pill-blue{background:#E3F5FF;color:var(--sea)}
+  .pill-yellow{background:#FFF3CD;color:#B26A00}
+  .pill-green{background:#E0F7F0;color:#00875F}
+
+  /* ---------- 交通 & 贴士 ---------- */
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .info-item{background:#fff;border-radius:18px;padding:14px 12px;box-shadow:0 6px 20px rgba(2,136,209,.08);text-align:center}
+  .info-item .big{font-size:26px;font-weight:800;color:var(--sea)}
+  .info-item .lb{font-size:12px;color:var(--ink-soft);margin-top:4px}
+  .info-item .sub{font-size:11px;color:#8FA1B0;margin-top:2px}
+  .tips li{font-size:13px;color:var(--ink-soft);line-height:2;list-style:none;padding-left:22px;position:relative}
+  .tips li::before{content:"☀";position:absolute;left:0;color:var(--sun);font-size:14px}
+
+  /* ---------- 航班卡片 ---------- */
+  .flight-card{background:var(--card);border-radius:22px;padding:18px 16px;margin-bottom:14px;
+    box-shadow:0 8px 28px rgba(2,136,209,.10)}
+  .flight-line{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:4px 0}
+  .flight-line .city{font-size:22px;font-weight:800;color:var(--ink);letter-spacing:1px}
+  .flight-line .arrow{font-size:18px;color:var(--ink-soft);flex:1;text-align:center}
+  .flight-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:12px;border-top:1px dashed #D8E6EF}
+  .flight-row .item{font-size:13px;color:var(--ink-soft);text-align:center;flex:1}
+  .flight-row .item b{display:block;font-size:15px;color:var(--deep);margin-bottom:2px}
+  .flight-row .item .hl{color:var(--coral);font-weight:700}
+
+  /* ---------- 相册 ---------- */
+  .album{background:linear-gradient(135deg,#FFF3CD,#FFE0B2 60%,#FFCCBC);border-radius:26px;
+    padding:26px 18px;text-align:center;box-shadow:0 10px 30px rgba(255,152,0,.22);position:relative;overflow:hidden}
+  .album .cam{font-size:52px;line-height:1;filter:drop-shadow(0 6px 12px rgba(0,0,0,.12));animation:bob 4s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .album h4{font-size:19px;margin:12px 0 6px;color:#8D4E00;letter-spacing:2px}
+  .album p{font-size:13px;color:#9A6A2F;line-height:1.8;padding:0 6px}
+  .album .photo-row{display:flex;justify-content:center;gap:10px;margin:16px 0 4px;flex-wrap:wrap}
+  .album .ph{width:74px;height:74px;border-radius:16px;background:rgba(255,255,255,.75);
+    display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.9)}
+  .album .btn{
+    display:inline-block;margin-top:16px;background:#fff;color:var(--coral);font-weight:800;font-size:14px;
+    border-radius:999px;padding:11px 30px;letter-spacing:2px;text-decoration:none;
+    box-shadow:0 6px 18px rgba(244,81,30,.25)
+  }
+  .album .btn.on{background:linear-gradient(135deg,#FF8A65,#F4511E);color:#fff}
+  .album .soon{font-size:11px;color:#B27A3A;margin-top:12px;letter-spacing:1px}
+
+  /* ---------- 页脚 ---------- */
+  footer{text-align:center;padding:34px 20px 46px;color:var(--ink-soft)}
+  footer .hr{width:56px;height:4px;border-radius:4px;margin:0 auto 14px;
+    background:linear-gradient(90deg,var(--sun),var(--coral))}
+  footer p{font-size:12px;line-height:2;letter-spacing:1px}
+  footer .go{font-size:26px;margin-bottom:8px}
+
+  /* 顶部返回 */
+  .back-top{position:fixed;right:14px;bottom:22px;width:42px;height:42px;border-radius:50%;
+    background:#fff;box-shadow:0 6px 18px rgba(2,136,209,.25);display:flex;align-items:center;
+    justify-content:center;font-size:18px;z-index:9;text-decoration:none}
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<div class="sky">
+  <div class="sun"></div>
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+  <div class="bird">🕊️</div>
+  <div class="hero">
+    <div class="tag">TEAM TRIP · 威海</div>
+    <h1>向海出发</h1>
+    <h2>威海团建之旅</h2>
+    <div class="meta">
+      <span>📅 9月27日 — 9月29日</span>
+      <span>👭 全员 15 人</span>
+      <span>🌤️ 三天两晚</span>
+    </div>
+  </div>
+  <svg class="wave" viewBox="0 0 520 56" preserveAspectRatio="none">
+    <path d="M0,30 C60,10 120,50 200,32 C280,14 340,48 420,30 C470,19 500,34 520,26 L520,56 L0,56 Z" fill="#4FC3F7" opacity=".45"/>
+    <path d="M0,40 C80,22 150,54 230,40 C310,26 370,52 450,38 C480,33 505,44 520,38 L520,56 L0,56 Z" fill="#0288D1" opacity=".35"/>
+  </svg>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ 出行总览 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#E3F5FF">🧳</div>
+      <div><h3>出行总览</h3><small>OVERVIEW · 一图在手说走就走</small></div>
+    </div>
+    <div class="info-grid">
+      <div class="info-item"><div class="big">2 晚</div><div class="lb">入住希尔顿酒店</div><div class="sub">27日中午抵达 · 29日退房</div></div>
+      <div class="info-item"><div class="big">5 车</div><div class="lb">网约车出行 · 每车3人</div><div class="sub">人手一件行李箱，轻装分车</div></div>
+      <div class="info-item"><div class="big">✈️ 19:20</div><div class="lb">29日晚航班返程</div><div class="sub">16:00 从酒店出发去机场</div></div>
+      <div class="info-item"><div class="big">6 站</div><div class="lb">海岛 / 沙滩 / 打卡地标</div><div class="sub">刘公岛 · 那香海 · 布鲁威斯号…</div></div>
+    </div>
+  </div>
+
+  <!-- ============ 去程航班 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#E8F5E9">✈️</div>
+      <div><h3>去程航班</h3><small>OUTBOUND · 9月27日 上海 → 威海</small></div>
+    </div>
+    <div class="flight-card">
+      <div class="flight-line">
+        <span class="city">上海</span>
+        <span class="arrow">—— ✈️ ——</span>
+        <span class="city">威海</span>
+      </div>
+      <div class="flight-row">
+        <div class="item"><b>09-27</b><span class="hl">08:25</span> 起飞</div>
+        <div class="item"><b>航班号</b>9C6391</div>
+        <div class="item"><b>10:20</b><span class="hl">抵达</span></div>
+      </div>
+      <div class="flight-row" style="border-top:none;margin-top:6px;padding-top:0">
+        <div class="item" style="text-align:left"><b>出发地</b>浦东 2 号航站楼</div>
+        <div class="item" style="text-align:right"><b>到达后</b>约 12:00 抵达酒店</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DAY 1 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#D6EFFF">⛵</div>
+      <div><h3>D1 · 登岛看海</h3><small>9月27日 · 刘公岛历史之旅</small></div>
+    </div>
+    <div class="card">
+      <div class="day-head">
+        <div class="day-badge badge-sea"><small>SEP</small><b>27</b></div>
+        <div class="t"><b>刘公岛 · 历史与海风</b><span>中午抵达 → 傍晚凯旋 → 晚宴开场 🎉</span></div>
+        <div class="day-weather">🌤️ 宜登岛</div>
+      </div>
+      <div class="tl">
+        <div class="stop">
+          <div class="time">12:00 — 13:00</div>
+          <div class="name">🏨 抵达酒店 · 寄存行李 · 午餐</div>
+          <div class="note">房间没准备好就先寄存行李，避免15人等入住耽误上岛</div>
+        </div>
+        <div class="stop">
+          <div class="time">13:00 — 13:20</div>
+          <div class="name">🚕 前往刘公岛旅游码头</div>
+          <div class="note">车程预留约 15—20 分钟</div>
+        </div>
+        <div class="stop">
+          <div class="time">13:20 — 14:00</div>
+          <div class="name">🎫 集合 · 检票 · 乘船</div>
+          <div class="note">排队与登船时间已算进去，不用急</div>
+        </div>
+        <div class="stop hl">
+          <div class="time">14:00 — 16:30</div>
+          <div class="name">🏝️ 刘公岛游览</div>
+          <div class="note">以甲午战争博物馆陈列馆、历史建筑及海边为主</div>
+          <span class="pill pill-yellow">📸 安排一次集体合影</span>
+        </div>
+        <div class="stop">
+          <div class="time">16:30 — 17:30</div>
+          <div class="name">🚢 排队出岛 · 返回酒店</div>
+          <div class="note">不压末班船，留足团队集合时间</div>
+        </div>
+        <div class="stop hl">
+          <div class="time">18:00 — 20:00</div>
+          <div class="name">🥂 希尔顿酒店晚宴</div>
+          <div class="note">第一天犒劳一下大家，好好吃一顿！</div>
+          <span class="pill pill-yellow">团队晚宴</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DAY 2 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#FFF3CD">🏖️</div>
+      <div><h3>D2 · 阳光海岸线</h3><small>9月28日 · 全天包车：海滨公园＋那香海＋布鲁威斯号</small></div>
+    </div>
+    <div class="card">
+      <div class="day-head">
+        <div class="day-badge badge-sun"><small>SEP</small><b>28</b></div>
+        <div class="t"><b>一路向北 · 追着海风跑</b><span>全天包车，随停随拍，松弛感拉满</span></div>
+        <div class="day-weather">☀️ 好心情</div>
+      </div>
+      <div class="tl">
+        <div class="stop">
+          <div class="time">08:30</div>
+          <div class="name">🚌 酒店集合出发</div>
+          <div class="note">早餐后出发，不必赶早</div>
+        </div>
+        <div class="stop">
+          <div class="time">09:00 — 09:35</div>
+          <div class="name">🗼 悦海公园</div>
+          <div class="note">约 25—35 分钟 · 看灯塔、海边散步</div>
+        </div>
+        <div class="stop hl">
+          <div class="time">10:20 — 11:30</div>
+          <div class="name">🌊 那香海</div>
+          <div class="note">约 40—55 分钟 · 沙滩合影、散步</div>
+          <span class="pill pill-green">🎯 留 20 分钟轻松团建互动</span>
+        </div>
+        <div class="stop">
+          <div class="time">11:30 — 12:40</div>
+          <div class="name">🍜 那香海附近午餐</div>
+          <div class="note">提前订好两桌，饭后稍作休息</div>
+        </div>
+        <div class="stop hl">
+          <div class="time">13:00 — 14:00</div>
+          <div class="name">🚢 布鲁威斯号</div>
+          <div class="note">约 15—25 分钟 · 在岸边看船、拍照，预留一小时够从容</div>
+          <span class="pill pill-blue">网红打卡点</span>
+        </div>
+        <div class="stop">
+          <div class="time">14:40 — 15:10</div>
+          <div class="name">☕ 逍遥湾沿线休息</div>
+          <div class="note">约 30—45 分钟 · 选方便中巴停车、有卫生间的点</div>
+        </div>
+        <div class="stop hl">
+          <div class="time">15:50 — 16:20</div>
+          <div class="name">🖼️ 威海公园「大相框」</div>
+          <div class="note">约 35—50 分钟 · 拍团体照、短暂散步</div>
+          <span class="pill pill-yellow">📸 团体照</span>
+        </div>
+        <div class="stop">
+          <div class="time">16:40 左右</div>
+          <div class="name">🏨 返回酒店休息</div>
+          <div class="note">约 15—25 分钟车程</div>
+        </div>
+        <div class="stop hl">
+          <div class="time">18:00 — 19:30</div>
+          <div class="name">🦞 酒店附近团体晚餐</div>
+          <div class="note">建议订海鲜或鲁菜两桌，免去再次长距离坐车</div>
+          <span class="pill pill-yellow">海鲜/鲁菜</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DAY 3 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#FFE4D6">✈️</div>
+      <div><h3>D3 · 慢时光返程</h3><small>9月29日 · 海源公园＋市区休闲，16:00 去机场</small></div>
+    </div>
+    <div class="card">
+      <div class="day-head">
+        <div class="day-badge badge-coral"><small>SEP</small><b>29</b></div>
+        <div class="t"><b>把威海装进行李箱</b><span>上午散步咖啡 · 下午自由活动 · 晚上飞回家</span></div>
+        <div class="day-weather">🌅 慢慢来</div>
+      </div>
+      <div class="tl">
+        <div class="stop">
+          <div class="time">08:00 — 09:00</div>
+          <div class="name">🍳 早餐 · 收拾行李</div>
+          <div class="note">行李提前整理好</div>
+        </div>
+        <div class="stop">
+          <div class="time">09:15 — 10:30</div>
+          <div class="name">⚓ 海源公园</div>
+          <div class="note">酒店出发约 15—25 分钟 · 看渔船、海湾，轻松散步</div>
+        </div>
+        <div class="stop">
+          <div class="time">10:30 — 11:15</div>
+          <div class="name">📸 海边咖啡 / 自由拍照</div>
+          <div class="note">想休息的同事可以早点回酒店</div>
+        </div>
+        <div class="stop">
+          <div class="time">11:30 — 12:00</div>
+          <div class="name">🏨 返回酒店 · 办理退房</div>
+          <div class="note">行李统一寄存 · 延迟退房需酒店确认</div>
+        </div>
+        <div class="stop">
+          <div class="time">12:00 — 13:15</div>
+          <div class="name">🍱 威高广场附近午餐</div>
+          <div class="note">方便 15 人集合，也离酒店近</div>
+        </div>
+        <div class="stop hl">
+          <div class="time">13:15 — 14:45</div>
+          <div class="name">🛍️ 幸福门海边＋威高广场自由活动</div>
+          <div class="note">可散步、买伴手礼，也可坐下喝咖啡</div>
+          <span class="pill pill-blue">伴手礼时间</span>
+        </div>
+        <div class="stop">
+          <div class="time">14:45 — 15:30</div>
+          <div class="name">🧳 返回酒店休息 · 取行李</div>
+          <div class="note">留足洗手间和清点行李时间</div>
+        </div>
+        <div class="stop hl">
+          <div class="time">15:45</div>
+          <div class="name">📢 全员集合</div>
+          <div class="note">点人数、装车</div>
+        </div>
+        <div class="stop">
+          <div class="time">16:00</div>
+          <div class="name">✈️ 酒店出发去威海机场</div>
+          <div class="note">先按约 60—75 分钟预留，再依据航班时间校验 · 19:20 航班起飞</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 交通贴士 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#E0F7F0">🚕</div>
+      <div><h3>交通贴士</h3><small>TRANSPORT · 分车出行更灵活</small></div>
+    </div>
+    <div class="card">
+      <ul class="tips">
+        <li>15 人分 5 辆网约车，每车 3 人，人手一件行李箱刚好放得下</li>
+        <li>机场 → 酒店、酒店周边短途统一用打车软件，下车即到</li>
+        <li>D2 全天包车出游，大部队集合点名以「车」为单位更高效</li>
+        <li>上车前拍一下车牌，方便互相找车、错车不丢人</li>
+        <li>集合时间统一以行程表为准，误差控制在 5 分钟内 ✌️</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ============ 返程航班 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#FFEBEE">✈️</div>
+      <div><h3>返程航班</h3><small>RETURN · 9月29日 威海 → 上海</small></div>
+    </div>
+    <div class="flight-card">
+      <div class="flight-line">
+        <span class="city">威海</span>
+        <span class="arrow">—— ✈️ ——</span>
+        <span class="city">上海</span>
+      </div>
+      <div class="flight-row">
+        <div class="item"><b>09-29</b><span class="hl">19:20</span> 起飞</div>
+        <div class="item"><b>航班号</b>MU8392<br><span style="font-size:11px;color:#8FA1B0">实际承运 FM9234</span></div>
+        <div class="item"><b>21:20</b><span class="hl">抵达</span></div>
+      </div>
+      <div class="flight-row" style="border-top:none;margin-top:6px;padding-top:0">
+        <div class="item" style="text-align:left"><b>去机场</b>16:00 酒店出发</div>
+        <div class="item" style="text-align:right"><b>飞行时长</b>约 2 小时</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 团队相册 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#FFE9C8">📷</div>
+      <div><h3>团队相册</h3><small>ALBUM · 实时照片上传</small></div>
+    </div>
+    <div class="album" id="album">
+      <div class="cam">📸</div>
+      <h4>威海时光纪念册</h4>
+      <p>旅途中随手拍的照片、视频，统一上传到团队百度网盘相册<br>拍完就传，回家的路上就能一起回味啦～</p>
+      <div class="photo-row">
+        <div class="ph">🏝️</div><div class="ph">🌅</div><div class="ph">🦀</div>
+      </div>
+      <a class="btn" id="albumBtn" href="javascript:void(0)" onclick="alert('相册链接即将开放～出发前会上线，敬请期待 🌞')">☁️ 相册链接 · 即将开放</a>
+      <div class="soon" id="albumSoon">百度网盘实时上传 · 链接由组织者更新</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="hr"></div>
+    <div class="go">🌊 ☀️ 🌊</div>
+    <p>面朝大海 · 一起向海出发<br>威海团建 2026.09.27 — 09.29<br>祝大家玩得开心，满载而归 🧡</p>
+  </footer>
+</div>
+
+<a class="back-top" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false" title="回到顶部">🌤️</a>
+
+<script>
+/* 相册链接注入：设置 BAIDU_NETDISK_URL 后自动生效 */
+(function(){
+  var saved = null;
+  try{ saved = localStorage.getItem('weihai_album_url'); }catch(e){}
+  var url = BAIDU_NETDISK_URL || saved;
+  if(url){
+    var btn = document.getElementById('albumBtn');
+    btn.textContent = '📷 点这里 · 查看实时相册';
+    btn.className = 'btn on';
+    btn.href = url;
+    btn.removeAttribute('onclick');
+    var soon = document.getElementById('albumSoon');
+    if(soon){ soon.textContent = '打开百度网盘即可查看 · 照片实时更新 · 提取码 0927'; }
+  }
+})();
+</script>
+</body>
+</html>
