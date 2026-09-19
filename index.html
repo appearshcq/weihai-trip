@@ -154,6 +154,10 @@
     color:#5A3D14;font-weight:600;line-height:1.4;border:1px solid #F7E3C2;
     box-shadow:0 3px 9px rgba(244,81,30,.07)}
   .menu-grid .dish.star{background:#fff;color:#5A3D14;font-weight:600;border-color:#F7E3C2}
+  /* 冷知识用海洋蓝开关，与晚宴橙区分 */
+  .stop .dinner-toggle.blue{background:#E3F5FF;color:var(--sea)}
+  .stop .dinner-toggle.blue.open{background:linear-gradient(135deg,#4FC3F7,#0288D1);color:#fff}
+  .dinner-card.story-card{background:linear-gradient(160deg,#F4FBFF,#EAF6FF 70%,#E3F5FF);border-color:#BEE3F7}
 
   /* ---------- 今日模式 ---------- */
   .today-banner{margin:0 0 14px;background:linear-gradient(135deg,#FF8A65,#F4511E);color:#fff;
@@ -166,15 +170,6 @@
   .day-card.today{box-shadow:0 0 0 2px #FFB300,0 12px 34px rgba(255,179,0,.30)}
   .today-badge{flex:none;margin-left:8px;background:#FFB300;color:#fff;font-size:11px;font-weight:800;
     border-radius:999px;padding:3px 9px;letter-spacing:1px;box-shadow:0 3px 8px rgba(255,179,0,.35)}
-
-  /* ---------- 旅拍任务 ---------- */
-  .task-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
-  .task{background:#fff;border:1px solid #E3EFF7;border-radius:14px;padding:12px 6px;text-align:center;
-    box-shadow:0 3px 10px rgba(2,136,209,.06)}
-  .task .te{display:block;font-size:24px;margin-bottom:6px}
-  .task b{display:block;font-size:12.5px;color:var(--ink);letter-spacing:.5px}
-  .task .tn{display:block;font-size:10.5px;color:#8FA1B0;margin-top:4px;line-height:1.5}
-  .task-tip{margin-top:12px;text-align:center;font-size:12px;color:var(--ink-soft);line-height:1.7}
 
   /* ---------- 日出日落 ---------- */
   .sun-grid{display:grid;gap:6px}
@@ -362,6 +357,18 @@
           <div class="name">🏝️ 刘公岛游览</div>
           <div class="note">以甲午战争博物馆陈列馆、历史建筑及海边为主</div>
           <span class="pill pill-yellow">📸 安排一次集体合影</span>
+          <span class="dinner-toggle blue" role="button" tabindex="0">📖 查看刘公岛冷知识 · 逛岛小故事</span>
+          <div class="dinner-fold">
+            <div class="dinner-card story-card">
+              <div class="story-grid">
+                <div class="story"><span class="se">🛡️</span><b>「不沉的战舰」</b><span class="sn">刘公岛与旅顺口隔海相望，共扼渤海咽喉，自古就有「不沉的战舰」之称</span></div>
+                <div class="story"><span class="se">⚓</span><b>第一支近代海军</b><span class="sn">1888 年北洋海军在岛上正式成军，是清朝第一支近代化海军，鼎盛时号称亚洲第一</span></div>
+                <div class="story"><span class="se">🚢</span><b>定远传奇</b><span class="sn">旗舰「定远舰」曾是亚洲第一巨舰，甲午海战中重伤自爆沉没，如今岛边能看到等比复原舰</span></div>
+                <div class="story"><span class="se">🏛️</span><b>刘公与老洋房</b><span class="sn">岛名来自汉末刘公刘母乐善好施的传说；岛上还保留着 40 多栋英租时期（1898—1930）的老洋房</span></div>
+              </div>
+              <p class="story-tip">逛岛时对照找找这些故事的原址，比单纯打卡有意思多啦 🧭</p>
+            </div>
+          </div>
         </div>
         <div class="stop">
           <div class="time">16:30 — 17:30</div>
@@ -528,6 +535,28 @@
           <div class="name">🛍️ 幸福门海边＋威高广场自由活动</div>
           <div class="note">可散步、买伴手礼，也可坐下喝咖啡</div>
           <span class="pill pill-blue">伴手礼时间</span>
+          <span class="dinner-toggle" role="button" tabindex="0">🍜 查看美食 &amp; 伴手礼清单</span>
+          <div class="dinner-fold">
+            <div class="dinner-card">
+              <div class="food-t">🍽️ 必吃清单</div>
+              <div class="food-grid">
+                <div class="food"><b>鲅鱼水饺</b><span>威海头号招牌，个大馅足</span></div>
+                <div class="food"><b>海肠捞饭</b><span>鲜掉眉毛的胶东名吃</span></div>
+                <div class="food"><b>乳山生蚝</b><span>国家地理标志，肥美清甜</span></div>
+                <div class="food"><b>鱼锅饼子</b><span>杂鱼贴饼，渔家一锅鲜</span></div>
+                <div class="food"><b>无花果</b><span>威海时令水果，软糯蜜甜</span></div>
+                <div class="food"><b>海鲜烧烤</b><span>晚上来一顿，配海风正好</span></div>
+              </div>
+              <div class="food-t">🎁 伴手礼清单</div>
+              <div class="food-grid">
+                <div class="food"><b>海参礼盒</b><span>威海刺参，送长辈有面子</span></div>
+                <div class="food"><b>胶东花饽饽</b><span>非遗花馍，喜庆又好看</span></div>
+                <div class="food"><b>无花果干</b><span>鲜果带不走，果干很方便</span></div>
+                <div class="food"><b>海带/裙带菜</b><span>荣成海带全国出名，凉拌一绝</span></div>
+              </div>
+              <p class="food-tip">就在这里买最顺路 🛍️ 鲜货记得选真空包装，才好带上飞机 ✈️</p>
+            </div>
+          </div>
         </div>
         <div class="stop">
           <div class="time">14:45 — 15:30</div>
@@ -609,28 +638,6 @@
     </div>
   </div>
 
-  <!-- ============ 旅拍任务 ============ -->
-  <div class="section">
-    <div class="sec-title">
-      <div class="ico" style="background:#F3E5F5">🎯</div>
-      <div><h3>旅拍任务</h3></div>
-    </div>
-    <div class="card">
-      <div class="task-grid">
-        <div class="task"><span class="te">🌅</span><b>海上日出</b><span class="tn">起个早，蹲一张海上日出</span></div>
-        <div class="task"><span class="te">📸</span><b>明信片大片</b><span class="tn">拍一张最像明信片的风景</span></div>
-        <div class="task"><span class="te">🦀</span><b>舌尖威海</b><span class="tn">拍最馋人的那一道海鲜</span></div>
-        <div class="task"><span class="te">🤳</span><b>创意合影</b><span class="tn">集体照之外，来张有想法的</span></div>
-        <div class="task"><span class="te">🪞</span><b>倒影之美</b><span class="tn">找水面或玻璃，拍一张倒影</span></div>
-        <div class="task"><span class="te">🚢</span><b>沉船情绪片</b><span class="tn">布鲁威斯号前的氛围大片</span></div>
-        <div class="task"><span class="te">🗼</span><b>灯塔同框</b><span class="tn">和悦海公园的灯塔合个影</span></div>
-        <div class="task"><span class="te">😂</span><b>抓拍大笑</b><span class="tn">抓一个没摆拍的爆笑瞬间</span></div>
-        <div class="task"><span class="te">🌉</span><b>华灯初上</b><span class="tn">拍一张威海的夜色</span></div>
-      </div>
-      <p class="task-tip">完成一项就发到群里打卡 📣 旅程结束评选「旅拍之王」🏆 照片记得传团队相册哦</p>
-    </div>
-  </div>
-
   <!-- ============ 日出日落 ============ -->
   <div class="section">
     <div class="sec-title">
@@ -645,50 +652,6 @@
         <div class="sun-row"><span>9月29日 · D3</span><span>05:50</span><span>17:41</span></div>
       </div>
       <p class="sun-tip">想拍海上日出，建议 05:15 前到海边占位 🌊 日落后天黑得快，海边风大记得带件外套 🧥</p>
-    </div>
-  </div>
-
-  <!-- ============ 刘公岛冷知识 ============ -->
-  <div class="section">
-    <div class="sec-title">
-      <div class="ico" style="background:#E3F5FF">📖</div>
-      <div><h3>刘公岛·冷知识</h3><small>LIUGONG ISLAND · 逛岛前的 4 个小故事</small></div>
-    </div>
-    <div class="card">
-      <div class="story-grid">
-        <div class="story"><span class="se">🛡️</span><b>「不沉的战舰」</b><span class="sn">刘公岛与旅顺口隔海相望，共扼渤海咽喉，自古就有「不沉的战舰」之称</span></div>
-        <div class="story"><span class="se">⚓</span><b>第一支近代海军</b><span class="sn">1888 年北洋海军在岛上正式成军，是清朝第一支近代化海军，鼎盛时号称亚洲第一</span></div>
-        <div class="story"><span class="se">🚢</span><b>定远传奇</b><span class="sn">旗舰「定远舰」曾是亚洲第一巨舰，甲午海战中重伤自爆沉没，如今岛边能看到等比复原舰</span></div>
-        <div class="story"><span class="se">🏛️</span><b>刘公与老洋房</b><span class="sn">岛名来自汉末刘公刘母乐善好施的传说；岛上还保留着 40 多栋英租时期（1898—1930）的老洋房</span></div>
-      </div>
-      <p class="story-tip">逛岛时对照找找这些故事的原址，比单纯打卡有意思多啦 🧭</p>
-    </div>
-  </div>
-
-  <!-- ============ 美食伴手礼 ============ -->
-  <div class="section">
-    <div class="sec-title">
-      <div class="ico" style="background:#FFE9C8">🍜</div>
-      <div><h3>美食 &amp; 伴手礼</h3><small>FOOD &amp; GIFTS · 舌尖上的威海</small></div>
-    </div>
-    <div class="card">
-      <div class="food-t">🍽️ 必吃清单</div>
-      <div class="food-grid">
-        <div class="food"><b>鲅鱼水饺</b><span>威海头号招牌，个大馅足</span></div>
-        <div class="food"><b>海肠捞饭</b><span>鲜掉眉毛的胶东名吃</span></div>
-        <div class="food"><b>乳山生蚝</b><span>国家地理标志，肥美清甜</span></div>
-        <div class="food"><b>鱼锅饼子</b><span>杂鱼贴饼，渔家一锅鲜</span></div>
-        <div class="food"><b>无花果</b><span>威海时令水果，软糯蜜甜</span></div>
-        <div class="food"><b>海鲜烧烤</b><span>晚上来一顿，配海风正好</span></div>
-      </div>
-      <div class="food-t">🎁 伴手礼清单</div>
-      <div class="food-grid">
-        <div class="food"><b>海参礼盒</b><span>威海刺参，送长辈有面子</span></div>
-        <div class="food"><b>胶东花饽饽</b><span>非遗花馍，喜庆又好看</span></div>
-        <div class="food"><b>无花果干</b><span>鲜果带不走，果干很方便</span></div>
-        <div class="food"><b>海带/裙带菜</b><span>荣成海带全国出名，凉拌一绝</span></div>
-      </div>
-      <p class="food-tip">伴手礼安排在 D3 威高广场自由活动时买最顺路 🛍️ 鲜货记得选真空包装，才好带上飞机 ✈️</p>
     </div>
   </div>
 
@@ -767,19 +730,22 @@
   });
 })();
 
-/* D1 晚宴详情：点「查看详情」展开/收起菜单 */
+/* 晚宴菜单/冷知识/美食清单：点「查看」展开收起（多处通用） */
 (function(){
-  var t = document.querySelector('.dinner-toggle');
-  if(!t) return;
-  var fold = document.querySelector('.dinner-fold');
-  function toggle(){
-    var open = fold.classList.toggle('open');
-    t.classList.toggle('open', open);
-    t.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
-  t.addEventListener('click', toggle);
-  t.addEventListener('keydown', function(e){
-    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+  var toggles = Array.prototype.slice.call(document.querySelectorAll('.dinner-toggle'));
+  toggles.forEach(function(t){
+    var scope = t.closest ? t.closest('.stop') : t.parentElement;
+    var fold = scope ? scope.querySelector('.dinner-fold') : null;
+    if(!fold) return;
+    function toggle(){
+      var open = fold.classList.toggle('open');
+      t.classList.toggle('open', open);
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    t.addEventListener('click', toggle);
+    t.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
+    });
   });
 })();
 
