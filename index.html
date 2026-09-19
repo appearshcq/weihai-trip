@@ -155,24 +155,6 @@
     box-shadow:0 3px 9px rgba(244,81,30,.07)}
   .menu-grid .dish.star{background:#fff;color:#5A3D14;font-weight:600;border-color:#F7E3C2}
 
-  /* ---------- 刘公岛游览图 ---------- */
-  .stop .tour-toggle{display:inline-block;margin-top:9px;cursor:pointer;background:#E3F5FF;color:var(--sea);
-    border-radius:999px;padding:11px 20px;font-size:14.5px;font-weight:800;user-select:none;
-    letter-spacing:.5px;
-    box-shadow:0 4px 12px rgba(2,136,209,.24);transition:background .3s ease,color .3s ease,transform .2s ease;
-    -webkit-tap-highlight-color:transparent}
-  .stop .tour-toggle:active{transform:scale(.97)}
-  .stop .tour-toggle::after{content:" ▾";margin-left:4px;font-weight:700}
-  .stop .tour-toggle.open{background:linear-gradient(135deg,#4FC3F7,#0288D1);color:#fff}
-  .stop .tour-toggle.open::after{content:" ▴"}
-  .tour-fold{max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.4,0,.2,1)}
-  .tour-fold.open{max-height:3600px}
-  .tour-card{margin-top:12px;background:linear-gradient(160deg,#EAF7FF,#DDF1FD 70%,#D3EBFB);
-    border-radius:20px;padding:14px 12px;border:1px solid #BEE3F7}
-  .tour-card img{display:block;width:100%;height:auto;border-radius:14px;
-    box-shadow:0 8px 24px rgba(2,136,209,.16)}
-  .tour-tip{margin-top:10px;text-align:center;font-size:11.5px;color:#5B87A6}
-
   /* ---------- 交通 & 贴士 ---------- */
   .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .info-item{background:#fff;border-radius:18px;padding:14px 12px;box-shadow:0 6px 20px rgba(2,136,209,.08);text-align:center}
@@ -323,15 +305,6 @@
           <div class="name">🏝️ 刘公岛游览</div>
           <div class="note">以甲午战争博物馆陈列馆、历史建筑及海边为主</div>
           <span class="pill pill-yellow">📸 安排一次集体合影</span>
-          <span class="tour-toggle" role="button" tabindex="0" aria-expanded="false">🗺️ 查看游览路线图</span>
-          <div class="tour-fold">
-            <div class="tour-card">
-              <a href="liugongdao.jpg" target="_blank" rel="noopener">
-                <img src="liugongdao.jpg" alt="刘公岛半日游 · 游览路线与时间安排">
-              </a>
-              <div class="tour-tip">👆 点击图片可放大查看</div>
-            </div>
-          </div>
         </div>
         <div class="stop">
           <div class="time">16:30 — 17:30</div>
@@ -640,22 +613,6 @@
   var t = document.querySelector('.dinner-toggle');
   if(!t) return;
   var fold = document.querySelector('.dinner-fold');
-  function toggle(){
-    var open = fold.classList.toggle('open');
-    t.classList.toggle('open', open);
-    t.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
-  t.addEventListener('click', toggle);
-  t.addEventListener('keydown', function(e){
-    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
-  });
-})();
-
-/* 刘公岛游览图：点「查看游览路线图」展开/收起 */
-(function(){
-  var t = document.querySelector('.tour-toggle');
-  if(!t) return;
-  var fold = document.querySelector('.tour-fold');
   function toggle(){
     var open = fold.classList.toggle('open');
     t.classList.toggle('open', open);
