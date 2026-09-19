@@ -155,6 +155,35 @@
     box-shadow:0 3px 9px rgba(244,81,30,.07)}
   .menu-grid .dish.star{background:#fff;color:#5A3D14;font-weight:600;border-color:#F7E3C2}
 
+  /* ---------- 一键导航 ---------- */
+  .nav-chip{display:inline-block;margin:6px 0 0 8px;cursor:pointer;background:#E3F5FF;color:var(--sea);
+    border-radius:999px;padding:6px 14px;font-size:12.5px;font-weight:700;text-decoration:none;
+    letter-spacing:.5px;box-shadow:0 3px 9px rgba(2,136,209,.14);
+    transition:transform .2s ease,box-shadow .3s ease;-webkit-tap-highlight-color:transparent}
+  .nav-chip:active{transform:scale(.95)}
+  .nav-chip.solo{margin-left:0}
+
+  /* ---------- 今日模式 ---------- */
+  .today-banner{margin:0 0 14px;background:linear-gradient(135deg,#FF8A65,#F4511E);color:#fff;
+    border-radius:16px;padding:13px 16px;font-size:14px;font-weight:700;text-align:center;
+    letter-spacing:.5px;box-shadow:0 8px 24px rgba(244,81,30,.28);animation:bannin .6s ease}
+  .today-banner b{font-size:18px;color:#FFF3CD}
+  .today-banner.memory{background:linear-gradient(135deg,#4FC3F7,#0288D1);
+    box-shadow:0 8px 24px rgba(2,136,209,.28)}
+  @keyframes bannin{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+  .day-card.today{box-shadow:0 0 0 2px #FFB300,0 12px 34px rgba(255,179,0,.30)}
+  .today-badge{flex:none;margin-left:8px;background:#FFB300;color:#fff;font-size:11px;font-weight:800;
+    border-radius:999px;padding:3px 9px;letter-spacing:1px;box-shadow:0 3px 8px rgba(255,179,0,.35)}
+
+  /* ---------- 旅拍任务 ---------- */
+  .task-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+  .task{background:#fff;border:1px solid #E3EFF7;border-radius:14px;padding:12px 6px;text-align:center;
+    box-shadow:0 3px 10px rgba(2,136,209,.06)}
+  .task .te{display:block;font-size:24px;margin-bottom:6px}
+  .task b{display:block;font-size:12.5px;color:var(--ink);letter-spacing:.5px}
+  .task .tn{display:block;font-size:10.5px;color:#8FA1B0;margin-top:4px;line-height:1.5}
+  .task-tip{margin-top:12px;text-align:center;font-size:12px;color:var(--ink-soft);line-height:1.7}
+
   /* ---------- 交通 & 贴士 ---------- */
   .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .info-item{background:#fff;border-radius:18px;padding:14px 12px;box-shadow:0 6px 20px rgba(2,136,209,.08);text-align:center}
@@ -305,6 +334,7 @@
           <div class="name">🏝️ 刘公岛游览</div>
           <div class="note">以甲午战争博物馆陈列馆、历史建筑及海边为主</div>
           <span class="pill pill-yellow">📸 安排一次集体合影</span>
+          <a class="nav-chip" href="https://apis.map.qq.com/uri/v1/geocoder?keyword=刘公岛景区&region=威海&referer=weihaitrip" target="_blank" rel="noopener">🧭 导航</a>
         </div>
         <div class="stop">
           <div class="time">16:30 — 17:30</div>
@@ -322,7 +352,7 @@
               <div class="dinner-meta">
                 <div class="row"><span class="ic">🏨</span><span>威海威高希尔顿逸林酒店 <b>三楼 · 环海厅</b></span></div>
                 <div class="row"><span class="ic">🕕</span><span>用餐时间：<b>9月27日 晚上 18:00</b></span></div>
-                <div class="row"><span class="ic">📍</span><span>酒店地址：<b>环翠区新威路 17-3b 号</b></span></div>
+                <div class="row"><span class="ic">📍</span><span>酒店地址：<b>环翠区新威路 17-3b 号</b></span><a class="nav-chip" style="margin:2px 0 0 4px" href="https://apis.map.qq.com/uri/v1/geocoder?keyword=威海威高希尔顿逸林酒店&region=威海&referer=weihaitrip" target="_blank" rel="noopener">🧭 导航</a></div>
                 <div class="row"><span class="ic">📞</span><span>酒店电话：<b>0631-5289688</b> <span style="font-size:11px;color:#B27A3A">（可拨打）</span></span></div>
               </div>
               <div class="dinner-menu-t">🍽️ 晚宴菜单 · 经典鲁菜 21 道</div>
@@ -381,12 +411,14 @@
           <div class="time">09:00 — 09:35</div>
           <div class="name">🗼 悦海公园</div>
           <div class="note">约 25—35 分钟 · 看灯塔、海边散步</div>
+          <a class="nav-chip solo" href="https://apis.map.qq.com/uri/v1/geocoder?keyword=悦海公园&region=威海&referer=weihaitrip" target="_blank" rel="noopener">🧭 导航</a>
         </div>
         <div class="stop hl">
           <div class="time">10:20 — 11:30</div>
           <div class="name">🌊 那香海</div>
           <div class="note">约 40—55 分钟 · 沙滩合影、散步</div>
           <span class="pill pill-green">🎯 留 20 分钟轻松团建互动</span>
+          <a class="nav-chip" href="https://apis.map.qq.com/uri/v1/geocoder?keyword=那香海景区&region=威海&referer=weihaitrip" target="_blank" rel="noopener">🧭 导航</a>
         </div>
         <div class="stop">
           <div class="time">11:30 — 12:40</div>
@@ -398,6 +430,7 @@
           <div class="name">🚢 布鲁威斯号</div>
           <div class="note">约 15—25 分钟 · 在岸边看船、拍照，预留一小时够从容</div>
           <span class="pill pill-blue">网红打卡点</span>
+          <a class="nav-chip" href="https://apis.map.qq.com/uri/v1/geocoder?keyword=布鲁威斯号&region=威海&referer=weihaitrip" target="_blank" rel="noopener">🧭 导航</a>
         </div>
         <div class="stop">
           <div class="time">14:40 — 15:10</div>
@@ -409,6 +442,7 @@
           <div class="name">🖼️ 威海公园「大相框」</div>
           <div class="note">约 35—50 分钟 · 拍团体照、短暂散步</div>
           <span class="pill pill-yellow">📸 团体照</span>
+          <a class="nav-chip" href="https://apis.map.qq.com/uri/v1/geocoder?keyword=威海公园&region=威海&referer=weihaitrip" target="_blank" rel="noopener">🧭 导航</a>
         </div>
         <div class="stop">
           <div class="time">16:40 左右</div>
@@ -450,6 +484,7 @@
           <div class="time">09:15 — 10:30</div>
           <div class="name">⚓ 海源公园</div>
           <div class="note">酒店出发约 15—25 分钟 · 看渔船、海湾，轻松散步</div>
+          <a class="nav-chip solo" href="https://apis.map.qq.com/uri/v1/geocoder?keyword=海源公园&region=威海&referer=weihaitrip" target="_blank" rel="noopener">🧭 导航</a>
         </div>
         <div class="stop">
           <div class="time">10:30 — 11:15</div>
@@ -471,6 +506,7 @@
           <div class="name">🛍️ 幸福门海边＋威高广场自由活动</div>
           <div class="note">可散步、买伴手礼，也可坐下喝咖啡</div>
           <span class="pill pill-blue">伴手礼时间</span>
+          <a class="nav-chip" href="https://apis.map.qq.com/uri/v1/geocoder?keyword=幸福门公园&region=威海&referer=weihaitrip" target="_blank" rel="noopener">🧭 导航</a>
         </div>
         <div class="stop">
           <div class="time">14:45 — 15:30</div>
@@ -486,6 +522,7 @@
           <div class="time">16:00</div>
           <div class="name">✈️ 酒店出发去威海机场</div>
           <div class="note">先按约 60—75 分钟预留，再依据航班时间校验 · 19:20 航班起飞</div>
+          <a class="nav-chip solo" href="https://apis.map.qq.com/uri/v1/geocoder?keyword=威海大水泊国际机场&region=威海&referer=weihaitrip" target="_blank" rel="noopener">🧭 导航</a>
         </div>
       </div>
       </div>
@@ -530,6 +567,28 @@
         <div class="item" style="text-align:left"><b>去机场</b>16:00 酒店出发</div>
         <div class="item" style="text-align:right"><b>飞行时长</b>约 2 小时</div>
       </div>
+    </div>
+  </div>
+
+  <!-- ============ 旅拍任务 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#F3E5F5">🎯</div>
+      <div><h3>旅拍任务</h3></div>
+    </div>
+    <div class="card">
+      <div class="task-grid">
+        <div class="task"><span class="te">🌅</span><b>海上日出</b><span class="tn">起个早，蹲一张海上日出</span></div>
+        <div class="task"><span class="te">📸</span><b>明信片大片</b><span class="tn">拍一张最像明信片的风景</span></div>
+        <div class="task"><span class="te">🦀</span><b>舌尖威海</b><span class="tn">拍最馋人的那一道海鲜</span></div>
+        <div class="task"><span class="te">🤳</span><b>创意合影</b><span class="tn">集体照之外，来张有想法的</span></div>
+        <div class="task"><span class="te">🪞</span><b>倒影之美</b><span class="tn">找水面或玻璃，拍一张倒影</span></div>
+        <div class="task"><span class="te">🚢</span><b>沉船情绪片</b><span class="tn">布鲁威斯号前的氛围大片</span></div>
+        <div class="task"><span class="te">🗼</span><b>灯塔同框</b><span class="tn">和悦海公园的灯塔合个影</span></div>
+        <div class="task"><span class="te">😂</span><b>抓拍大笑</b><span class="tn">抓一个没摆拍的爆笑瞬间</span></div>
+        <div class="task"><span class="te">🌉</span><b>华灯初上</b><span class="tn">拍一张威海的夜色</span></div>
+      </div>
+      <p class="task-tip">完成一项就发到群里打卡 📣 旅程结束评选「旅拍之王」🏆 照片记得传团队相册哦</p>
     </div>
   </div>
 
@@ -622,6 +681,51 @@
   t.addEventListener('keydown', function(e){
     if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); toggle(); }
   });
+})();
+
+/* 今日模式：出发前倒计时 · 行程中高亮当天 · 旅程后回忆模式 */
+(function(){
+  var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var d1 = new Date(2026, 8, 27), d2 = new Date(2026, 8, 28), d3 = new Date(2026, 8, 29);
+  var wrap = document.querySelector('.wrap');
+  var cards = document.querySelectorAll('.card.day-card');
+  if(!wrap || !cards.length) return;
+
+  function days(a, b){ return Math.round((a - b) / 864e5); }
+  function show(html, memory){
+    var b = document.createElement('div');
+    b.className = 'today-banner' + (memory ? ' memory' : '');
+    b.innerHTML = html;
+    wrap.insertBefore(b, wrap.firstChild);
+  }
+  function mark(card){
+    if(!card) return;
+    card.classList.add('today');
+    var head = card.querySelector('.day-head');
+    if(head){
+      var t = document.createElement('span');
+      t.className = 'today-badge';
+      t.textContent = '📍 今天';
+      head.appendChild(t);
+    }
+  }
+
+  if(today < d1){
+    var n = days(d1, today);
+    show('⏳ 距离出发还有 <b>' + n + '</b> 天 · ' + (n <= 7 ? '该收拾行李啦 🧳' : '期待一起看海 🌊'));
+  } else if(days(today, d1) === 0){
+    show('🎉 今天出发登岛！13:20 码头集合 · 晚上希尔顿见 🥂');
+    mark(cards[0]);
+  } else if(days(today, d2) === 0){
+    show('🏖️ 今天沿海岸线一路向北！08:30 酒店集合');
+    mark(cards[1]);
+  } else if(days(today, d3) === 0){
+    show('✈️ 今天返程 · 15:45 全员集合，16:00 出发机场');
+    mark(cards[2]);
+  } else if(today > d3){
+    show('🌊 威海之行圆满结束 · 感谢同行，常回来看看这些回忆 🧡', true);
+  }
 })();
 </script>
 </body>
