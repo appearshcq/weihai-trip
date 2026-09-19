@@ -176,6 +176,42 @@
   .task .tn{display:block;font-size:10.5px;color:#8FA1B0;margin-top:4px;line-height:1.5}
   .task-tip{margin-top:12px;text-align:center;font-size:12px;color:var(--ink-soft);line-height:1.7}
 
+  /* ---------- 日出日落 ---------- */
+  .sun-grid{display:grid;gap:6px}
+  .sun-row{display:grid;grid-template-columns:1fr 1fr 1fr;text-align:center;font-size:13.5px;
+    color:var(--ink);background:#FAFDFF;border:1px solid #E3EFF7;border-radius:12px;padding:10px 4px}
+  .sun-row.sun-head{background:#E3F5FF;color:var(--sea);font-weight:800;font-size:12.5px;letter-spacing:1px}
+  .sun-tip{margin-top:11px;text-align:center;font-size:12px;color:var(--ink-soft);line-height:1.7}
+
+  /* ---------- 刘公岛冷知识 ---------- */
+  .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .story{background:#fff;border:1px solid #E3EFF7;border-radius:14px;padding:13px 12px;
+    box-shadow:0 3px 10px rgba(2,136,209,.06)}
+  .story .se{display:block;font-size:22px;margin-bottom:6px}
+  .story b{display:block;font-size:13px;color:var(--ink);margin-bottom:4px}
+  .story .sn{display:block;font-size:11.5px;color:#5F7A8C;line-height:1.7}
+  .story-tip{margin-top:11px;text-align:center;font-size:12px;color:var(--ink-soft);line-height:1.7}
+
+  /* ---------- 美食伴手礼 ---------- */
+  .food-t{display:flex;align-items:center;gap:8px;margin:4px 0 10px;font-size:14px;font-weight:800;
+    color:var(--sea);letter-spacing:1px}
+  .food-t::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#BEE3F7,transparent)}
+  .food-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+  .food{background:#fff;border:1px solid #E3EFF7;border-radius:12px;padding:9px 11px;
+    box-shadow:0 3px 9px rgba(2,136,209,.05)}
+  .food b{display:block;font-size:12.5px;color:var(--ink)}
+  .food span{display:block;font-size:11px;color:#8FA1B0;margin-top:2px;line-height:1.55}
+  .food-tip{margin-top:2px;text-align:center;font-size:12px;color:var(--ink-soft);line-height:1.7}
+
+  /* ---------- 紧急联系 ---------- */
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .contact{background:#fff;border:1px solid #E3EFF7;border-radius:12px;padding:12px 4px;text-align:center;
+    text-decoration:none;box-shadow:0 3px 9px rgba(2,136,209,.05);-webkit-tap-highlight-color:transparent}
+  .contact .ce{display:block;font-size:21px;margin-bottom:4px}
+  .contact b{display:block;font-size:11.5px;color:#5F7A8C;font-weight:600}
+  .contact .cn{display:block;font-size:13px;font-weight:800;color:var(--coral);margin-top:2px}
+  .contact-tip{margin-top:11px;text-align:center;font-size:12px;color:var(--ink-soft);line-height:1.7}
+
   /* ---------- 交通 & 贴士 ---------- */
   .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .info-item{background:#fff;border-radius:18px;padding:14px 12px;box-shadow:0 6px 20px rgba(2,136,209,.08);text-align:center}
@@ -530,6 +566,25 @@
     </div>
   </div>
 
+  <!-- ============ 紧急联系 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#FFEBEE">🆘</div>
+      <div><h3>紧急联系</h3></div>
+    </div>
+    <div class="card">
+      <div class="contact-grid">
+        <a class="contact" href="tel:110"><span class="ce">🚓</span><b>报警</b><span class="cn">110</span></a>
+        <a class="contact" href="tel:120"><span class="ce">🚑</span><b>急救</b><span class="cn">120</span></a>
+        <a class="contact" href="tel:119"><span class="ce">🚒</span><b>火警</b><span class="cn">119</span></a>
+        <a class="contact" href="tel:122"><span class="ce">🚗</span><b>交通事故</b><span class="cn">122</span></a>
+        <a class="contact" href="tel:06315289688"><span class="ce">🏨</span><b>酒店前台</b><span class="cn">0631-5289688</span></a>
+        <div class="contact"><span class="ce">🏥</span><b>就近大医院</b><span class="cn">威海市立医院（环翠区）</span></div>
+      </div>
+      <p class="contact-tip">走散别慌：微信「位置 — 共享实时位置」最快找到彼此 📍</p>
+    </div>
+  </div>
+
   <!-- ============ 返程航班 ============ -->
   <div class="section">
     <div class="sec-title">
@@ -573,6 +628,67 @@
         <div class="task"><span class="te">🌉</span><b>华灯初上</b><span class="tn">拍一张威海的夜色</span></div>
       </div>
       <p class="task-tip">完成一项就发到群里打卡 📣 旅程结束评选「旅拍之王」🏆 照片记得传团队相册哦</p>
+    </div>
+  </div>
+
+  <!-- ============ 日出日落 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#FFF3CD">⏰</div>
+      <div><h3>日出日落</h3><small>SUNRISE &amp; SUNSET · 追光时间表</small></div>
+    </div>
+    <div class="card">
+      <div class="sun-grid">
+        <div class="sun-row sun-head"><span>日期</span><span>🌅 日出</span><span>🌇 日落</span></div>
+        <div class="sun-row"><span>9月27日 · D1</span><span>05:48</span><span>17:43</span></div>
+        <div class="sun-row"><span>9月28日 · D2</span><span>05:49</span><span>17:42</span></div>
+        <div class="sun-row"><span>9月29日 · D3</span><span>05:50</span><span>17:41</span></div>
+      </div>
+      <p class="sun-tip">想拍海上日出，建议 05:15 前到海边占位 🌊 日落后天黑得快，海边风大记得带件外套 🧥</p>
+    </div>
+  </div>
+
+  <!-- ============ 刘公岛冷知识 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#E3F5FF">📖</div>
+      <div><h3>刘公岛·冷知识</h3><small>LIUGONG ISLAND · 逛岛前的 4 个小故事</small></div>
+    </div>
+    <div class="card">
+      <div class="story-grid">
+        <div class="story"><span class="se">🛡️</span><b>「不沉的战舰」</b><span class="sn">刘公岛与旅顺口隔海相望，共扼渤海咽喉，自古就有「不沉的战舰」之称</span></div>
+        <div class="story"><span class="se">⚓</span><b>第一支近代海军</b><span class="sn">1888 年北洋海军在岛上正式成军，是清朝第一支近代化海军，鼎盛时号称亚洲第一</span></div>
+        <div class="story"><span class="se">🚢</span><b>定远传奇</b><span class="sn">旗舰「定远舰」曾是亚洲第一巨舰，甲午海战中重伤自爆沉没，如今岛边能看到等比复原舰</span></div>
+        <div class="story"><span class="se">🏛️</span><b>刘公与老洋房</b><span class="sn">岛名来自汉末刘公刘母乐善好施的传说；岛上还保留着 40 多栋英租时期（1898—1930）的老洋房</span></div>
+      </div>
+      <p class="story-tip">逛岛时对照找找这些故事的原址，比单纯打卡有意思多啦 🧭</p>
+    </div>
+  </div>
+
+  <!-- ============ 美食伴手礼 ============ -->
+  <div class="section">
+    <div class="sec-title">
+      <div class="ico" style="background:#FFE9C8">🍜</div>
+      <div><h3>美食 &amp; 伴手礼</h3><small>FOOD &amp; GIFTS · 舌尖上的威海</small></div>
+    </div>
+    <div class="card">
+      <div class="food-t">🍽️ 必吃清单</div>
+      <div class="food-grid">
+        <div class="food"><b>鲅鱼水饺</b><span>威海头号招牌，个大馅足</span></div>
+        <div class="food"><b>海肠捞饭</b><span>鲜掉眉毛的胶东名吃</span></div>
+        <div class="food"><b>乳山生蚝</b><span>国家地理标志，肥美清甜</span></div>
+        <div class="food"><b>鱼锅饼子</b><span>杂鱼贴饼，渔家一锅鲜</span></div>
+        <div class="food"><b>无花果</b><span>威海时令水果，软糯蜜甜</span></div>
+        <div class="food"><b>海鲜烧烤</b><span>晚上来一顿，配海风正好</span></div>
+      </div>
+      <div class="food-t">🎁 伴手礼清单</div>
+      <div class="food-grid">
+        <div class="food"><b>海参礼盒</b><span>威海刺参，送长辈有面子</span></div>
+        <div class="food"><b>胶东花饽饽</b><span>非遗花馍，喜庆又好看</span></div>
+        <div class="food"><b>无花果干</b><span>鲜果带不走，果干很方便</span></div>
+        <div class="food"><b>海带/裙带菜</b><span>荣成海带全国出名，凉拌一绝</span></div>
+      </div>
+      <p class="food-tip">伴手礼安排在 D3 威高广场自由活动时买最顺路 🛍️ 鲜货记得选真空包装，才好带上飞机 ✈️</p>
     </div>
   </div>
 
