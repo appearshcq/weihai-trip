@@ -169,6 +169,12 @@
   .rust-text{font-size:13px;color:#44607A;line-height:1.9}
   .rust-text b{color:#2B4A63}
   .rust-tip{margin-top:11px;text-align:center;font-size:12px;color:var(--ink-soft);line-height:1.7}
+  /* 游览路线图用青绿开关 */
+  .stop .dinner-toggle.tour{background:#E0F7F0;color:#00875F}
+  .stop .dinner-toggle.tour.open{background:linear-gradient(135deg,#26C6A6,#00875F);color:#fff}
+  .tour-img{display:block;border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(2,136,209,.14)}
+  .tour-img img{display:block;width:100%;height:auto}
+  .tour-tip{margin-top:9px;text-align:center;font-size:12px;color:var(--ink-soft);line-height:1.7}
 
   /* ---------- 今日模式 ---------- */
   .today-banner{margin:0 0 14px;background:linear-gradient(135deg,#FF8A65,#F4511E);color:#fff;
@@ -393,6 +399,13 @@
               </div>
               <p class="story-tip">逛岛时对照找找这些故事的原址，比单纯打卡有意思多啦 🧭</p>
             </div>
+          </div>
+          <span class="dinner-toggle tour" role="button" tabindex="0">🗺️ 查看刘公岛游览路线图</span>
+          <div class="dinner-fold">
+            <a class="tour-img" href="liugongdao.webp" target="_blank" rel="noopener">
+              <img src="liugongdao.webp" alt="刘公岛游览路线图" loading="lazy">
+            </a>
+            <p class="tour-tip">点图片可放大看原图 · 出岛末班船 17:30（以景区当日公告为准）</p>
           </div>
         </div>
         <div class="stop">
@@ -774,8 +787,11 @@
 (function(){
   var toggles = Array.prototype.slice.call(document.querySelectorAll('.dinner-toggle'));
   toggles.forEach(function(t){
-    var scope = t.closest ? t.closest('.stop') : t.parentElement;
-    var fold = scope ? scope.querySelector('.dinner-fold') : null;
+    var fold = t.nextElementSibling;
+    if(!fold || !fold.classList.contains('dinner-fold')){
+      var scope = t.closest ? t.closest('.stop') : t.parentElement;
+      fold = scope ? scope.querySelector('.dinner-fold') : null;
+    }
     if(!fold) return;
     function toggle(){
       var open = fold.classList.toggle('open');
